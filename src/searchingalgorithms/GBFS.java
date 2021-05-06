@@ -114,6 +114,20 @@ public class GBFS
         }
     }
     
+//    void GreedyBestFirst ( HashMap <String,Integer> Heuristic_Value, String Start, String Goal) 
+//    {
+//        int Counter = 0;
+//        PriorityQueue <NPair> Frontier = new PriorityQueue <>();
+//        NPair NPair_Object = new NPair(0,Start);
+//        while(!Frontier.isEmpty())
+//        {
+//            Counter += 1;
+//            int Cost = NPair_Object.X;
+//            String Node = NPair_Object.Y;
+//        }
+//        
+//    }
+    
     public static int Calculate_Distance(int X1, int Y1, int X2, int Y2) 
     {
         return (int) Math.sqrt(Math.pow(X1 - X2, 2) + Math.pow(Y1 - Y2, 2));
@@ -154,6 +168,17 @@ class Pair
         Y = y;
     }
 }
+
+//class NPair 
+//{
+//    int X;String Y;
+//    
+//    NPair(int x, String y)
+//    {
+//        X = x;
+//        Y = y;
+//    }
+//}
 
 class State 
 {

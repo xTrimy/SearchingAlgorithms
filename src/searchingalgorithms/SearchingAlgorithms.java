@@ -16,6 +16,24 @@ public class SearchingAlgorithms
         boolean[][] visited;
         int Start_X, Start_Y, Goal_X, Goal_Y;
         
+        HashMap <String, Integer> Heuristic_Value = new HashMap <>();
+        
+        Heuristic_Value.put("Arad", 366);
+        Heuristic_Value.put("Zerind", 374);
+        Heuristic_Value.put("Timisoara", 329);
+        Heuristic_Value.put("Sibiu", 400);
+        Heuristic_Value.put("Oradea", 380);
+        Heuristic_Value.put("Lugoj", 244);
+        Heuristic_Value.put("RimnicuVilcea", 193);
+        Heuristic_Value.put("Mehadia", 241);
+        Heuristic_Value.put("Craiova", 160);
+        Heuristic_Value.put("Pitesti", 10);
+        Heuristic_Value.put("Fagaras", 176);
+        Heuristic_Value.put("Dobreta", 242);
+        Heuristic_Value.put("Bucharest", 0);
+        Heuristic_Value.put("Giurgiu", 77);
+        
+        
         int Table[][] = {   {1,0 ,1 ,0 ,1 ,0, 1},
                             {0, 1, 0, 1, 0, 1, 0},
                             {1, 0, 1, 0, 1, 0, 1},
@@ -48,6 +66,7 @@ public class SearchingAlgorithms
         
         GBFS GBFS_Object = new GBFS();
         GBFS_Object.GreedyBestFirst(Table, visited, Table.length, Table[0].length, Start_X, Start_Y, Goal_X, Goal_Y);
+//        GBFS_Object.GreedyBestFirst(Heuristic_Value, "Arad", "Bucharest");
         GBFS_Object.Display();
     }
     
