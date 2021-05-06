@@ -2,13 +2,13 @@ import networkx as nx
 import scipy
 import matplotlib.pyplot as plt
 
-import BFS
+import DFS
 
 def GUIrun(start, goal, graph, heuristic, path, total_cost, startSelection, goalSelection):
     print(start)
     start = startSelection.get()
     goal = goalSelection.get()
-    path, total_cost = BFS.run(graph, start, goal)
+    path, total_cost = DFS.run(graph, start, goal)
     graphGUI(start,goal, graph, heuristic, path)
 
 

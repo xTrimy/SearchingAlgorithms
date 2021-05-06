@@ -1,12 +1,11 @@
 
-from queue import Queue
 
-def run(graph,startingNode, destinationNode):
+def run(graph, startingNode, destinationNode):
     visited = []
     distance = {}
     parent = {}
     bfs_traversal_output = []
-    queue = Queue()
+    stack = []
     for city in graph.keys():
         parent[city] = None
         distance[city] = -1
@@ -14,10 +13,10 @@ def run(graph,startingNode, destinationNode):
     startingCity = startingNode
     visited.append(startingCity)
     distance[startingCity] = 0
-    queue.put(startingCity)
+    stack.append(startingCity)
 
-    while not queue.empty():
-        u = queue.get()
+    while stack:
+        u = stack.pop(-1)
         bfs_traversal_output.append(u)
 
         for v in graph[u]:
@@ -25,7 +24,7 @@ def run(graph,startingNode, destinationNode):
             if node not in visited:
                 visited.append(node)
                 parent[node] = u
-                queue.put(node)
+                stack.append(node)
 
     g = destinationNode
     path = []
