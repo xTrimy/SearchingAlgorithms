@@ -23,6 +23,7 @@ def run(graph, heuristic, cost, start, goal):
             opened.append(temp)
     trace_node = goal
     optimal_sequence = [goal]
+    total_costs = []
     for i in range(len(closed)-2,-1,-1):
         check_node = closed[i][0]
 
@@ -31,8 +32,9 @@ def run(graph, heuristic, cost, start, goal):
             children_nodes = [temp[0] for temp in graph[check_node]]
 
             if cost[check_node] + children_costs[children_nodes.index(trace_node)] == cost[trace_node]:
+                total_costs.append(cost[trace_node])
                 optimal_sequence.append(check_node)
                 trace_node = check_node
 
     optimal_sequence.reverse()
-    return closed, optimal_sequence
+    return closed, optimal_sequence, total_costs
