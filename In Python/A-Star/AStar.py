@@ -7,13 +7,16 @@ def run(graph, heuristic, cost, start, goal):
         smallest_index = fn.index(min(fn))
         node = opened[smallest_index][0]
         closed.append(opened[smallest_index])
+        print("Unvisited:"+str(opened))
+        print("Current Node:"+str(node))
+        print("Visited: "+str(closed))
+        print("")
         del opened[smallest_index]
         if closed[-1][0] == goal:
             break
         for item in graph[node]:
             if item[0] in [closed_item[0] for closed_item in closed]:
                 continue
-            print(cost)
             cost.update({item[0]: cost[node] + item[1]})
             fn_node = cost[node] + heuristic[item[0]] + item[1]
             temp = [item[0], fn_node]

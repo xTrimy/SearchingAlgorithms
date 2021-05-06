@@ -89,7 +89,7 @@ heuristicValue =  {'Arad': 366, 'Zerind': 374,
          'Sibiu': 400,
          'Oradea': 380,
          'Lugoj': 244, 'RimnicuVilcea': 193,
-         'Mehadia': 241, 'Cra   iova': 160,
+         'Mehadia': 241, 'Craiova': 160,
          'Pitesti': 10, 'Fagaras': 176,
          'Dobreta': 242, 'Bucharest': 0,
          'Giurgiu': 77}

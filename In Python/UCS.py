@@ -96,4 +96,5 @@ if __name__ == '__main__':
     answer = ucs(goal, 0)
 
     print("Minimum cost from 0 to G is = ", answer[0])
+    print(graph)
 

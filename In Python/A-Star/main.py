@@ -28,7 +28,6 @@ for k, v in graph.items():
 G.add_edges_from(graph_connections)
 
 pos = nx.kamada_kawai_layout(G)
-nx.draw_networkx_nodes(G, pos, node_size=700, node_color='gray')
 
 nx.draw_networkx_edge_labels(G, pos, edge_labels=graph_connections_with_cost,
                        font_color='black')
@@ -47,10 +46,22 @@ for i,n in enumerate(optimal_nodes[:-1]):
             G[u][v]['color'] = 'red'
 
 
+for u in G.nodes:
+    if(g.start == u.split()[0]):
+        G.nodes[u]['color'] = 'cyan'
+    elif(g.goal == u.split()[0]):
+        G.nodes[u]['color'] = 'green'
+    else:
+        G.nodes[u]['color'] = 'gray'
+
+
 colors = [G[u][v]['color'] for u, v in G.edges]
+colors_nodes = [G.nodes[u]['color'] for u in G.nodes]
 
 nx.draw_networkx_labels(G, pos)
 nx.draw_networkx_edges(G, pos, edgelist=G.edges(),
                        edge_color=colors, arrows=False)
+nx.draw_networkx_nodes(G, pos, node_size=700, node_color=colors_nodes)
+
 plt.show()
 
