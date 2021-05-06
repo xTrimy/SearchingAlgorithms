@@ -1,6 +1,9 @@
+__author__ = "Mohamed Ashraf"
+
 import networkx as nx
 import scipy
 import matplotlib.pyplot as plt
+#####################################
 import graph as g
 import AStar
 graph = g.graph
